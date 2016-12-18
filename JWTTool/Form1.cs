@@ -39,6 +39,8 @@ namespace JWTTool
                    textBoxSiteName.Text
                    )
                    );
+
+            textBoxOutput.Text = $@"javascript:document.cookie = ""session={result}""";
         }
     }
 }

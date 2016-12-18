@@ -76,6 +76,7 @@
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(173, 20);
             this.textBoxEmail.TabIndex = 3;
+            this.textBoxEmail.Text = "test@test.com";
             // 
             // label2
             // 
@@ -101,11 +102,12 @@
             this.textBoxUserId.Name = "textBoxUserId";
             this.textBoxUserId.Size = new System.Drawing.Size(173, 20);
             this.textBoxUserId.TabIndex = 5;
+            this.textBoxUserId.Text = "1";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(26, 134);
+            this.label4.Location = new System.Drawing.Point(26, 130);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(25, 13);
             this.label4.TabIndex = 8;
@@ -113,10 +115,11 @@
             // 
             // textBoxSiteName
             // 
-            this.textBoxSiteName.Location = new System.Drawing.Point(29, 150);
+            this.textBoxSiteName.Location = new System.Drawing.Point(29, 146);
             this.textBoxSiteName.Name = "textBoxSiteName";
             this.textBoxSiteName.Size = new System.Drawing.Size(173, 20);
             this.textBoxSiteName.TabIndex = 7;
+            this.textBoxSiteName.Text = "test";
             // 
             // label5
             // 
@@ -133,6 +136,7 @@
             this.textBoxExpirationInSeconds.Name = "textBoxExpirationInSeconds";
             this.textBoxExpirationInSeconds.Size = new System.Drawing.Size(173, 20);
             this.textBoxExpirationInSeconds.TabIndex = 9;
+            this.textBoxExpirationInSeconds.Text = "86400";
             // 
             // label6
             // 
@@ -149,12 +153,13 @@
             this.textBoxSecretKey.Name = "textBoxSecretKey";
             this.textBoxSecretKey.Size = new System.Drawing.Size(173, 20);
             this.textBoxSecretKey.TabIndex = 11;
+            this.textBoxSecretKey.Text = "secretKey";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(457, 446);
+            this.ClientSize = new System.Drawing.Size(438, 446);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBoxSecretKey);
             this.Controls.Add(this.label5);
