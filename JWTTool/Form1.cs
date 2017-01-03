@@ -22,16 +22,18 @@ namespace JWTTool
 
         private void buttonSubmit_Click(object sender, EventArgs e)
         {
+            ITokenValidator tokenValidator = new TokenValidator();
             SessionManager manager = new SessionManager(
     new EncryptionManager(new Codenesium.Encryption.BCryptor(),
     new Codenesium.Encryption.JWTHelper(),
     new Codenesium.Encryption.HashSHA256(),
     new Codenesium.Encryption.SaltBCrypt()),
+    tokenValidator,
     textBoxSecretKey.Text,
     textBoxExpirationInSeconds.Text.ToInt(),
     textBoxSiteName.Text);
             string result = manager.PackagePayload(
-                SessionManager.GenerateSessionPayload(
+                manager.GenerateSessionPayload(
                     DateTime.UtcNow.ToCompleteDateString(),
                     DateTime.UtcNow.AddSeconds(textBoxExpirationInSeconds.Text.ToInt()).ToCompleteDateString(),
                    textBoxEmail.Text,

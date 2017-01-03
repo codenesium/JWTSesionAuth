@@ -16,10 +16,20 @@ namespace UnitTests
         [Test]
         public void GenerateToken()
         {
+            ITokenValidator tokenValidator = new TokenValidator();
             SessionManager manager = new SessionManager(
-                new EncryptionManager(new Codenesium.Encryption.BCryptor(), new Codenesium.Encryption.JWTHelper(), new Codenesium.Encryption.HashSHA256(), new Codenesium.Encryption.SaltBCrypt()),
-                "secretkey", 60 * 60 * 24 * 7, "fermatafish");
-            string result = manager.PackagePayload(SessionManager.GenerateSessionPayload(DateTime.UtcNow.ToCompleteDateString(), DateTime.UtcNow.AddDays(7).ToCompleteDateString(), "test@test.com", 1, "fermatafish"));
+                new EncryptionManager(
+                    new Codenesium.Encryption.BCryptor(),
+                    new Codenesium.Encryption.JWTHelper(),
+                    new Codenesium.Encryption.HashSHA256(),
+                    new Codenesium.Encryption.SaltBCrypt()
+                    ),
+                tokenValidator,
+                "secretkey",
+                60 * 60 * 24 * 7,
+                "fermatafish"
+                );
+            string result = manager.PackagePayload(manager.GenerateSessionPayload(DateTime.UtcNow.ToCompleteDateString(), DateTime.UtcNow.AddDays(7).ToCompleteDateString(), "test@test.com", 1, "fermatafish"));
             System.Diagnostics.Debug.Print(result);
 
             SessionPayload requestSessionPayload = new SessionPayload();
@@ -27,7 +37,7 @@ namespace UnitTests
 
             requestSessionPayload.LoadJson(unpackagedToken);
 
-            Assert.IsTrue(SessionManager.IsTokenActive(requestSessionPayload.CreatedDate.ToDateTime(), 60 * 60 * 24 * 7));
+            Assert.IsTrue(tokenValidator.IsTokenActive(requestSessionPayload.CreatedDate.ToDateTime(), 60 * 60 * 24 * 7));
         }
     }
 }

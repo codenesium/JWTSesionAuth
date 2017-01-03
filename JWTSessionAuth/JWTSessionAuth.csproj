@@ -42,6 +42,14 @@
       <HintPath>..\FoundationWeb\packages\Codenesium.Encryption.1.0.0-Beta\lib\net461\Codenesium.Encryption.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="FluentAssertions, Version=4.18.0.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentAssertions.4.18.0\lib\net45\FluentAssertions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FluentAssertions.Core, Version=4.18.0.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentAssertions.4.18.0\lib\net45\FluentAssertions.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="jose-jwt, Version=1.9.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\FoundationWeb\packages\Codenesium.Encryption.1.0.0-Beta\lib\net461\jose-jwt.dll</HintPath>
       <Private>True</Private>
@@ -85,10 +93,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ISessionManager.cs" />
+    <Compile Include="ITokenValidator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Session.cs" />
     <Compile Include="SessionManager.cs" />
     <Compile Include="SessionPayload.cs" />
+    <Compile Include="TokenValidator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

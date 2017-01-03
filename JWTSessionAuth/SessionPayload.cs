@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using FluentAssertions;
+using Newtonsoft.Json;
 
 namespace Codenesium.JWTSessionAuth
 {
@@ -10,8 +11,19 @@ namespace Codenesium.JWTSessionAuth
         public string ExpirationDate { get; private set; }
         public string SiteName { get; private set; }
 
-        public SessionPayload(string createdDate, string expirationDate, string email, string userId, string siteName)
+        public SessionPayload(
+            string createdDate,
+            string expirationDate,
+            string email,
+            string userId,
+            string siteName)
         {
+            createdDate.Should().NotBeNullOrEmpty();
+            expirationDate.Should().NotBeNullOrEmpty();
+            email.Should().NotBeNullOrEmpty();
+            siteName.Should().NotBeNullOrEmpty();
+            userId.Should().NotBeNullOrEmpty();
+
             this.Email = email;
             this.CreatedDate = createdDate;
             this.UserId = userId;
@@ -31,6 +43,12 @@ namespace Codenesium.JWTSessionAuth
             this.CreatedDate = result.CreatedDate;
             this.ExpirationDate = result.ExpirationDate;
             this.SiteName = result.SiteName;
+
+            this.CreatedDate.Should().NotBeNullOrEmpty();
+            this.ExpirationDate.Should().NotBeNullOrEmpty();
+            this.Email.Should().NotBeNullOrEmpty();
+            this.SiteName.Should().NotBeNullOrEmpty();
+            this.UserId.Should().NotBeNullOrEmpty();
         }
 
         public string ToJson()

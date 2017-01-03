@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FluentAssertions;
+using System;
 
 namespace Codenesium.JWTSessionAuth
 {
@@ -10,8 +11,18 @@ namespace Codenesium.JWTSessionAuth
         public string RequestToken { get; private set; } //sent with the request. We authenticate on this.
         public string ResponseToken { get; private set; } //sent with the response. This is updated each request with a new date.
 
-        public Session(DateTime date, string email, int userId, string requestToken, string responseToken)
+        public Session(
+            DateTime date,
+            string email,
+            int userId,
+            string requestToken,
+            string responseToken)
         {
+            email.Should().NotBeNullOrEmpty();
+            userId.Should().BeGreaterThan(0);
+            requestToken.Should().NotBeNullOrEmpty();
+            responseToken.Should().NotBeNullOrEmpty();
+
             this.Email = email;
             this.Date = date;
             this.UserId = userId;
