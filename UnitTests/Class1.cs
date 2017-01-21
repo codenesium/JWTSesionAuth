@@ -25,7 +25,7 @@ namespace UnitTests
                     new Codenesium.Encryption.SaltBCrypt()
                     ),
                 tokenValidator,
-                "secretkey",
+                "W1hRoFcbrm8BmqwCXPmeuE9C021VDc46",
                 60 * 60 * 24 * 7,
                 "fermatafish"
                 );

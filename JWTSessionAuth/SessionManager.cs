@@ -27,6 +27,10 @@ namespace Codenesium.JWTSessionAuth
             sessionExpirationTimeInMinutes.Should().BeGreaterThan(0);
             siteName.Should().NotBeNullOrEmpty();
 
+            //We require a 32 character HMAC key. This should be a random string.
+            //http://security.stackexchange.com/questions/95972/what-are-requirements-for-hmac-secret-key
+            hmacKey.Length.Should().BeGreaterOrEqualTo(32);
+
             this._encryptionManager = encryptionManager;
             this._hmacKey = hmacKey;
             this._sessionExpirationTimeInMinutes = sessionExpirationTimeInMinutes;
