@@ -35,7 +35,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Codenesium.DataConversionExtensions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Codenesium.Encryption.1.0.0-Beta\lib\net461\Codenesium.DataConversionExtensions.dll</HintPath>
+      <HintPath>..\packages\Codenesium.DataConversionExtensions.2017.1.1\lib\net461\Codenesium.DataConversionExtensions.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Codenesium.Encryption, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -63,15 +63,11 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Codenesium.Encryption.1.0.0-Beta\lib\net461\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="NLog, Version=3.2.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
-      <HintPath>..\packages\Codenesium.Encryption.1.0.0-Beta\lib\net461\NLog.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
-      <HintPath>..\packages\Codenesium.Encryption.1.0.0-Beta\lib\net461\nunit.framework.dll</HintPath>
+      <HintPath>..\packages\NLog.3.2.0.0\lib\net45\NLog.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -102,6 +98,7 @@
     <Compile Include="TokenValidator.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
